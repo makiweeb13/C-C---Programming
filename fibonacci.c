@@ -9,14 +9,13 @@ int main() {
         if (n <= 1) {
             n == 0 ? printf("%d ", i) : 
             n == 1 ? printf("%d ", j) : n;
-            n++;
         } else {
             k = i + j;
             printf("%d ", k);
             i = j;
             j = k;
-            n++;
         }
+        n++;
     }
 
     return 0;
