@@ -1,4 +1,4 @@
-# C-C---Programming
+# C-Programming
 
 ## C Programs
   My codes with C, contains my solutions from CodeChum
