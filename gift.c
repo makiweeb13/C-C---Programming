@@ -45,6 +45,7 @@ int main() {
     printf("\n\n");
     printPS(name);
 
+    system("pause");
     return 0;
 }
 
