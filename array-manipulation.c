@@ -19,6 +19,8 @@ int isSortedAscending(int arr[], int count);
 
 void moveSmallestToFirst(int array[], int count);
 void sortArray(int arr[], int count);
+void exchange(int*, int*);
+int findSmallest(int*, int);
 
 int main() {
     int array1[MAX];
@@ -279,18 +281,27 @@ int isSortedAscending(int arr[], int count) {
     }
 }
 
-void moveSmallestToFirst(int array[], int count) {
-    int smallest = array[0], temp;
+int findSmallest(int arr[], int count) {
+    int n = arr[0];
     for (int i = 1; i < count; i++) {
-        if (smallest > array[i]) {
-            smallest = array[i];
+        if (n > arr[i]) {
+            n = arr[i];
         }
     }
+    return n;
+}
+
+void exchange (int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void moveSmallestToFirst(int array[], int count) {
+    int smallest = findSmallest(array, count);
     for (int i = 0; i < count; i++) {
         if (array[i] == smallest) {
-            temp = array[0];
-            array[0] = smallest;
-            array[i] = temp;
+            exchange(array, array + i);
         }
     }
 }
